@@ -382,6 +382,7 @@ require_once __DIR__ . '/common.php';
 \define('_AM_WGGALLERY_CLONE_IMAGEFAIL', 'Attention, nous n\'avons pas réussi à créer le nouveau logo du module. Veuillez modifier manuellement le fichier assets/images/logo_module.png !');
 \define('_AM_WGGALLERY_CLONE_FAIL', "Désolé, nous n'avons pas réussi à créer le nouveau clone. Vous devez peut-être définir temporairement les droits d'écriture (CHMOD 777) dans le dossier « modules » et réessayer.");
 
+// JJDai : ajout de fonctionalité dans l'admin
 \define('_AM_WGGALLERY_FIRST', 'Premier');
 \define('_AM_WGGALLERY_UP', 'Monter');
 \define('_AM_WGGALLERY_DOWN', 'Descendre');

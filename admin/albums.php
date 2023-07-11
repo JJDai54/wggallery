@@ -98,30 +98,6 @@ switch ($op) {
         $GLOBALS['xoopsTpl']->assign('context', $context);       
          //---------------------------------------------------------------              
 
-        //---------------------------------------------------------------
-//         // JJDai : selection de la categories
-// 
-//         if ($helper->getConfig('use_categories')) {
-//             $albCats = $this->isNew() ? [] : unserialize($this->getVar('alb_cats'));
-// 
-//             $categoriesHandler = $helper->getHandler('Categories');
-//             $crCategories      = new \CriteriaCompo();
-//             $crCategories->add(new \Criteria('cat_album', 1));
-//             $categoriesCount = $categoriesHandler->getCount($crCategories);
-//             if ($categoriesCount > 0) {
-//                 $categoriesAll    = $categoriesHandler->getAll($crCategories);
-//                 $selectCategories = new \XoopsFormCheckBox(\_CO_WGGALLERY_CATS_SELECT, 'alb_cats', $albCats);
-//                 $selectCategories->setExtra('onchange="submit()"');
-//                 foreach (\array_keys($categoriesAll) as $i) {
-//                     $selectCategories->addOption($categoriesAll[$i]->getVar('cat_id'), $categoriesAll[$i]->getVar('cat_text'));
-//                 }
-//                 $GLOBALS['xoopsTpl']->assign('select_category', $selectCategories->render());        
-//             }
-//         }
-
-        
-        //--------------------------------------------------------        
-        
         
         if ('approve' === $op) {
             $adminObject->addItemButton(\_AM_WGGALLERY_ALBUMS_LIST, 'albums.php', 'list');

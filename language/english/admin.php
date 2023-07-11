@@ -381,3 +381,15 @@ require_once __DIR__ . '/common.php';
 \define('_AM_WGGALLERY_CLONE_CONGRAT', 'Congratulations! %s was sucessfully created!<br>You may want to make changes in language files.');
 \define('_AM_WGGALLERY_CLONE_IMAGEFAIL', 'Attention, we failed creating the new module logo. Please consider modifying assets/images/logo_module.png manually!');
 \define('_AM_WGGALLERY_CLONE_FAIL', "Sorry, we failed in creating the new clone. Maybe you need to temporally set write permissions (CHMOD 777) to 'modules' folder and try again.");
+
+// JJDai: add functionality in the admin
+\define('_AM_WGGALLERY_FIRST', 'First');
+\define('_AM_WGGALLERY_UP', 'Up');
+\define('_AM_WGGALLERY_DOWN', 'Down');
+\define('_AM_WGGALLERY_LAST', 'Last');
+\define('_AM_WGGALLERY_WEIGHT_UPDATE', 'Weight updated');
+\define('_AM_WGGALLERY_VIEW_ALBUM', 'View album');
+\define('_AM_WGGALLERY_SUBALBUMS', 'sub-Album-s');
+\define('_AM_WGGALLERY_ALPHA', 'Alphabetical sorting');
+\define('_AM_WGGALLERY_ALBUM_PARENT', 'Parent album');
+

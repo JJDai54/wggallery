@@ -293,3 +293,18 @@ $moduleDirNameUpper = \mb_strtoupper($moduleDirName);
 \define('CO_' . $moduleDirNameUpper . '_' . 'NEW_VERSION', 'Neue Version: ');
 \define('CO_' . $moduleDirNameUpper . '_' . 'ERROR_BAD_XOOPS', 'Sie benötigen mindestens Version %s (Ihre derzeitige Version ist %s)');
 \define('CO_' . $moduleDirNameUpper . '_ERROR_BAD_PHP', 'Dieses Modul benötigt mindestens PHP Version %s (Ihre aktuelle Version ist %s)');
+
+// JJDai: Funktionalität im Admin hinzufügen
+\define('_AM_WGGALLERY_FIRST', 'First');
+\define('_CO_WGGALLERY_FORM_CLEAR_ALBUM', "Bilder aus Album entfernen");
+\define('_CO_WGGALLERY_FORM_CLEAR_ALBUM_OK', "Bilder erfolgreich gelöscht");
+\define('_CO_WGGALLERY_FORM_SURE_CLEAR_ALBUM', "Möchten Sie alle <b><span style='color: Red;'>%s </span></b> Bilder aus dem Album entfernen: <b>< span style=' Farbe: Rot;'>%s </span></b>"); //Standard xoops bestätigen
+\define('_CO_WGGALLERY_COLLECTION', "Sammlung");
+\define('_CO_WGGALLERY_COLLECTIONS', "Sammlungen");
+\define('_CO_WGGALLERY_MANAGE_ALBUMS', "Alben verwalten");
+\define('_CO_WGGALLERY_ALL_ALBUMS', "Alle Alben");
+\define('_AM_WGGALLERY_SET_COLL_PERMISSIONS', "Sammlungsberechtigungen auf Alben anwenden");
+\define('_CO_WGGALLERY_SURE_SET_COLL_PERM', "Möchten Sie Berechtigungen auf <b><span style='color: Red;'>%s </span></b> Alben in der Sammlung anwenden: <b>< span style= 'color: Rot;'>%s </span></b>");
+\define('_CO_WGGALLERY_SET_COLL_PERM_OK', "Berechtigungen für Alben in der Sammlung erfolgreich festgelegt");
+\define('_CO_WGGALLERY_VIEW_ALBUM', "Album anzeigen");
+\define('_CO_WGGALLERY_COLLECTIONS_ROOT', "Root-Sammlungen");

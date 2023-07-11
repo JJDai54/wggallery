@@ -294,6 +294,17 @@ $moduleDirNameUpper = \mb_strtoupper($moduleDirName);
 \define('CO_' . $moduleDirNameUpper . '_' . 'ERROR_BAD_XOOPS', 'You need minimum version %s (your current version is %s)');
 \define('CO_' . $moduleDirNameUpper . '_' . 'ERROR_BAD_PHP', 'You need minimum version %s (your current version is %s)');      
 
-\define('_CO_WGGALLERY_FORM_CLEAR_ALBUM_OK', 'Successfully empty images');
-\define('_CO_WGGALLERY_FORM_SURE_CLEAR_ALBUM', "Are you sure to empty the <b><span style='color : Red;'>%s </span></b> images of album : <b><span style='color : Red;'>%s </span></b>"); //default xoops confirm
-              
+// JJDai: add functionality in the admin
+\define('_AM_WGGALLERY_FIRST', 'First');
+\define('_CO_WGGALLERY_FORM_CLEAR_ALBUM', "Removing images from album");
+\define('_CO_WGGALLERY_FORM_CLEAR_ALBUM_OK', "Successfully deleted images");
+\define('_CO_WGGALLERY_FORM_SURE_CLEAR_ALBUM', "Do you want to remove all <b><span style='color: Red;'>%s </span></b> images from album: <b>< span style='color: Red;'>%s </span></b>"); //default xoops confirm
+\define('_CO_WGGALLERY_COLLECTION', "Collection");
+\define('_CO_WGGALLERY_COLLECTIONS', "Collections");
+\define('_CO_WGGALLERY_MANAGE_ALBUMS', "Manage albums");
+\define('_CO_WGGALLERY_ALL_ALBUMS', "All albums");
+\define('_AM_WGGALLERY_SET_COLL_PERMISSIONS', "Apply collection permissions to albums");
+\define('_CO_WGGALLERY_SURE_SET_COLL_PERM', "Do you want to apply permissions to <b><span style='color: Red;'>%s </span></b> albums in collection: <b>< span style='color: Red;'>%s </span></b>");
+\define('_CO_WGGALLERY_SET_COLL_PERM_OK', "Successfully set permissions to albums in collection");
+\define('_CO_WGGALLERY_VIEW_ALBUM', "View album");
+\define('_CO_WGGALLERY_COLLECTIONS_ROOT', "Root Collections");              

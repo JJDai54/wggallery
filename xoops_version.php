@@ -20,6 +20,16 @@
  * @author         Wedega - Email:<webmaster@wedega.com> - Website:<https://wedega.com>
  * @version        $Id: 1.0 xoops_version.php 1 Mon 2018-03-19 07:47:33Z XOOPS Project (www.xoops.org) $
  */
+ 
+ /**
+  * JJDai (jjdelalandre@orange.fr)
+  * Ajout de fonctionalités dans l'admin
+  * -selection des albums et des images
+  * gestion du poids
+  * regroupement de colonne
+  * etc.
+  */
+  
 $moduleDirName      = \basename(__DIR__);
 $moduleDirNameUpper = \mb_strtoupper($moduleDirName);
 

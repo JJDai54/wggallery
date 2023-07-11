@@ -355,7 +355,7 @@ class Albums extends \XoopsObject
      * @param bool $action
      * @return \XoopsThemeForm
      */
-    public function getFormUploadToAlbum($action = false)
+    public function getFormUploadToAlbum($action = false, $sel_img_state=null)
     {
         $helper = \XoopsModules\Wggallery\Helper::getInstance();
         if (!$action) {
@@ -400,6 +400,21 @@ class Albums extends \XoopsObject
         $form->addElement(new \XoopsFormHidden('start', $this->start));
         $form->addElement(new \XoopsFormHidden('limit', $this->limit));
 
+        if($sel_alb_state){
+            // JJDai : selection de l'état
+            $imgStateSelect = new \XoopsFormRadio(\_CO_WGGALLERY_ALBUM_STATE, 'sel_img_state', $sel_img_state);
+            $imgStateSelect->setExtra('onchange="submit()"');
+            $imgStateSelect->addOption(Constants::STATE_ALL_VAL, \_CO_WGGALLERY_ALL);
+            $imgStateSelect->addOption(Constants::STATE_OFFLINE_VAL, \_CO_WGGALLERY_STATE_OFFLINE);
+            $imgStateSelect->addOption(Constants::STATE_ONLINE_VAL, \_CO_WGGALLERY_STATE_ONLINE);
+            if (Constants::STATE_APPROVAL_VAL == $sel_img_state) {
+                $imgStateSelect->addOption(Constants::STATE_APPROVAL_VAL, \_CO_WGGALLERY_STATE_APPROVAL);
+            }
+            $form->addElement($imgStateSelect);        
+        }        
+       
+         //---------------------------------------------------------------              
+        
         return $form;
     }
 

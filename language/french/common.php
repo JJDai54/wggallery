@@ -291,6 +291,8 @@ $moduleDirNameUpper = \mb_strtoupper($moduleDirName);
 \define('CO_' . $moduleDirNameUpper . '_' . 'ERROR_BAD_XOOPS', "Vous avez besoin au minimum de la version %s (votre version actuelle est %s)"); 
 \define('CO_' . $moduleDirNameUpper . '_' . 'ERROR_BAD_PHP', "Vous avez besoin au minimum de la version %s (votre version actuelle est %s)");
 
+// JJDai : ajout de fonctionalité dans l'admin
+\define('_AM_WGGALLERY_FIRST', 'First');
 \define('_CO_WGGALLERY_FORM_CLEAR_ALBUM', "Suppression des images de l&apos;album");
 \define('_CO_WGGALLERY_FORM_CLEAR_ALBUM_OK', "Suppression des images avec succès");
 \define('_CO_WGGALLERY_FORM_SURE_CLEAR_ALBUM', "Êtes-vous de vouloir supprimer toutes les <b><span style='color : Red;'>%s </span></b> images de l'album : <b><span style='color : Red;'>%s </span></b>"); //default xoops confirm

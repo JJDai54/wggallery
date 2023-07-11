@@ -6,19 +6,18 @@ Compilator.ProgSaveAll=0
 Compilator.ProgRunSelection=0
 Compilator.LogType=0
 Compilator.LogEncoding=0
-DefaultDir=D:\_JJD-WorkSpace-D\Wamp-Serveur\Sites\xoops-2511b-fr\www\modules\wggallery
+DefaultDir=J:\Xoops\modules-JJD\wggallery\GitHub\wggallery\htdocs\modules\wggallery
 DefaultCP=0
 LogtoEnd=1
 DontOpen=0
 AbsolutePath=0
 FileFormat=0
 ProjectFilesOnly=0
-HTServer=localhost
 Extensions=*.*
 [Project tree]
 _wggallery
 	+wggallery
-		-admin
+		+admin
 			admin\about.php
 			admin\albums.php
 			admin\albumtypes.php
@@ -747,18 +746,13 @@ _wggallery
 			include\plugin.tag.php
 			include\search.inc.php
 			include\xoops_version.inc.php
-		-language
+		+language
 			-english
 				-help
 					language\english\help\help.html
 					language\english\help\help.html.txt
 					language\english\help\index.php
 				-mail_template
-					language\english\mail_template\activated.tpl
-					language\english\mail_template\adminactivate.tpl
-					language\english\mail_template\comment_notify.tpl
-					language\english\mail_template\commentsubmit_notify.tpl
-					language\english\mail_template\default_notify.tpl
 					language\english\mail_template\global_alb_approve_notify.tpl
 					language\english\mail_template\global_alb_delete_notify.tpl
 					language\english\mail_template\global_alb_modify_notify.tpl
@@ -768,45 +762,15 @@ _wggallery
 					language\english\mail_template\global_img_delete_notify.tpl
 					language\english\mail_template\global_img_new_notify.tpl
 					language\english\mail_template\index.php
-					language\english\mail_template\lostpass1.tpl
-					language\english\mail_template\lostpass2.tpl
-					language\english\mail_template\register.tpl
-					language\english\mail_template\tellfriend.tpl
-					language\english\mail_template\welcome.tpl
 				language\english\admin.php
-				language\english\auth.php
-				language\english\backend.php
-				language\english\banners.php
 				language\english\blocks.php
-				language\english\calendar.php
-				language\english\captcha.php
-				language\english\comment.php
 				language\english\common.php
-				language\english\countries.php
 				language\english\directorychecker.php
-				language\english\errors.php
 				language\english\feedback.php
 				language\english\filechecker.php
-				language\english\findusers.php
-				language\english\formdhtmltextarea.php
-				language\english\global.php
 				language\english\index.php
-				language\english\locale.php
-				language\english\logger.php
-				language\english\mail.php
 				language\english\main.php
-				language\english\misc.php
 				language\english\modinfo.php
-				language\english\notification.php
-				language\english\pmsg.php
-				language\english\search.php
-				language\english\stopwords.php
-				language\english\style.css
-				language\english\timezone.php
-				language\english\uploader.php
-				language\english\user.php
-				language\english\xmf.php
-				language\english\xoopsmailerlocal.php
 			-french
 				-help
 					language\french\help\help.html
@@ -855,340 +819,6 @@ _wggallery
 				language\german\main.php
 				language\german\modinfo.php
 			language\index.php
-		-language-444
-			-english
-				-help
-					language-444\english\help\help.html
-					language-444\english\help\help.html.txt
-					language-444\english\help\index.php
-				-mail_template
-					language-444\english\mail_template\activated.tpl
-					language-444\english\mail_template\adminactivate.tpl
-					language-444\english\mail_template\comment_notify.tpl
-					language-444\english\mail_template\commentsubmit_notify.tpl
-					language-444\english\mail_template\default_notify.tpl
-					language-444\english\mail_template\global_alb_approve_notify.tpl
-					language-444\english\mail_template\global_alb_delete_notify.tpl
-					language-444\english\mail_template\global_alb_modify_notify.tpl
-					language-444\english\mail_template\global_alb_new_notify.tpl
-					language-444\english\mail_template\global_img_approve_notify.tpl
-					language-444\english\mail_template\global_img_comment_notify.tpl
-					language-444\english\mail_template\global_img_delete_notify.tpl
-					language-444\english\mail_template\global_img_new_notify.tpl
-					language-444\english\mail_template\index.php
-					language-444\english\mail_template\lostpass1.tpl
-					language-444\english\mail_template\lostpass2.tpl
-					language-444\english\mail_template\register.tpl
-					language-444\english\mail_template\tellfriend.tpl
-					language-444\english\mail_template\welcome.tpl
-				language-444\english\admin.php
-				language-444\english\auth.php
-				language-444\english\backend.php
-				language-444\english\banners.php
-				language-444\english\blocks.php
-				language-444\english\calendar.php
-				language-444\english\captcha.php
-				language-444\english\comment.php
-				language-444\english\common.php
-				language-444\english\countries.php
-				language-444\english\directorychecker.php
-				language-444\english\errors.php
-				language-444\english\feedback.php
-				language-444\english\filechecker.php
-				language-444\english\findusers.php
-				language-444\english\formdhtmltextarea.php
-				language-444\english\global.php
-				language-444\english\index.php
-				language-444\english\locale.php
-				language-444\english\logger.php
-				language-444\english\mail.php
-				language-444\english\main.php
-				language-444\english\misc.php
-				language-444\english\modinfo.php
-				language-444\english\notification.php
-				language-444\english\pmsg.php
-				language-444\english\search.php
-				language-444\english\stopwords.php
-				language-444\english\style.css
-				language-444\english\timezone.php
-				language-444\english\uploader.php
-				language-444\english\user.php
-				language-444\english\xmf.php
-				language-444\english\xoopsmailerlocal.php
-			-french
-				-help
-					language-444\french\help\help.html
-					language-444\french\help\help.html.txt
-					language-444\french\help\index.php
-				-mail_template
-					language-444\french\mail_template\activated.tpl
-					language-444\french\mail_template\adminactivate.tpl
-					language-444\french\mail_template\comment_notify.tpl
-					language-444\french\mail_template\commentsubmit_notify.tpl
-					language-444\french\mail_template\default_notify.tpl
-					language-444\french\mail_template\global_alb_approve_notify.tpl
-					language-444\french\mail_template\global_alb_delete_notify.tpl
-					language-444\french\mail_template\global_alb_modify_notify.tpl
-					language-444\french\mail_template\global_alb_new_notify.tpl
-					language-444\french\mail_template\global_img_approve_notify.tpl
-					language-444\french\mail_template\global_img_comment_notify.tpl
-					language-444\french\mail_template\global_img_delete_notify.tpl
-					language-444\french\mail_template\global_img_new_notify.tpl
-					language-444\french\mail_template\index.php
-					language-444\french\mail_template\lostpass1.tpl
-					language-444\french\mail_template\lostpass2.tpl
-					language-444\french\mail_template\register.tpl
-					language-444\french\mail_template\tellfriend.tpl
-					language-444\french\mail_template\welcome.tpl
-				language-444\french\admin.php
-				language-444\french\auth.php
-				language-444\french\backend.php
-				language-444\french\banners.php
-				language-444\french\blocks.php
-				language-444\french\calendar.php
-				language-444\french\captcha.php
-				language-444\french\comment.php
-				language-444\french\common.php
-				language-444\french\countries.php
-				language-444\french\directorychecker.php
-				language-444\french\errors.php
-				language-444\french\feedback.php
-				language-444\french\filechecker.php
-				language-444\french\findusers.php
-				language-444\french\formdhtmltextarea.php
-				language-444\french\global.php
-				language-444\french\index.php
-				language-444\french\locale.php
-				language-444\french\logger.php
-				language-444\french\mail.php
-				language-444\french\main.php
-				language-444\french\misc.php
-				language-444\french\modinfo.php
-				language-444\french\notification.php
-				language-444\french\pmsg.php
-				language-444\french\search.php
-				language-444\french\stopwords.php
-				language-444\french\style.css
-				language-444\french\timezone.php
-				language-444\french\uploader.php
-				language-444\french\user.php
-				language-444\french\xmf.php
-				language-444\french\xoopsmailerlocal.php
-			-french-zzz
-				-help
-					language-444\french-zzz\help\help.html
-					language-444\french-zzz\help\help.html.txt
-					language-444\french-zzz\help\index.php
-				-mail_template
-					language-444\french-zzz\mail_template\global_alb_approve_notify.tpl
-					language-444\french-zzz\mail_template\global_alb_delete_notify.tpl
-					language-444\french-zzz\mail_template\global_alb_modify_notify.tpl
-					language-444\french-zzz\mail_template\global_alb_new_notify.tpl
-					language-444\french-zzz\mail_template\global_img_approve_notify.tpl
-					language-444\french-zzz\mail_template\global_img_comment_notify.tpl
-					language-444\french-zzz\mail_template\global_img_delete_notify.tpl
-					language-444\french-zzz\mail_template\global_img_new_notify.tpl
-					language-444\french-zzz\mail_template\index.php
-				language-444\french-zzz\admin.php
-				language-444\french-zzz\blocks.php
-				language-444\french-zzz\common.php
-				language-444\french-zzz\directorychecker.php
-				language-444\french-zzz\feedback.php
-				language-444\french-zzz\filechecker.php
-				language-444\french-zzz\index.php
-				language-444\french-zzz\main.php
-				language-444\french-zzz\modinfo.php
-			-german
-				-help
-					language-444\german\help\help.html
-					language-444\german\help\index.php
-				-mail_template
-					language-444\german\mail_template\global_alb_approve_notify.tpl
-					language-444\german\mail_template\global_alb_delete_notify.tpl
-					language-444\german\mail_template\global_alb_modify_notify.tpl
-					language-444\german\mail_template\global_alb_new_notify.tpl
-					language-444\german\mail_template\global_img_approve_notify.tpl
-					language-444\german\mail_template\global_img_comment_notify.tpl
-					language-444\german\mail_template\global_img_delete_notify.tpl
-					language-444\german\mail_template\global_img_new_notify.tpl
-					language-444\german\mail_template\index.php
-				language-444\german\admin.php
-				language-444\german\blocks.php
-				language-444\german\common.php
-				language-444\german\directorychecker.php
-				language-444\german\feedback.php
-				language-444\german\filechecker.php
-				language-444\german\index.php
-				language-444\german\main.php
-				language-444\german\modinfo.php
-			language-444\index.php
-		-language-555
-			-english
-				-help
-					language-555\english\help\help.html
-					language-555\english\help\help.html.txt
-					language-555\english\help\index.php
-				-mail_template
-					language-555\english\mail_template\activated.tpl
-					language-555\english\mail_template\adminactivate.tpl
-					language-555\english\mail_template\comment_notify.tpl
-					language-555\english\mail_template\commentsubmit_notify.tpl
-					language-555\english\mail_template\default_notify.tpl
-					language-555\english\mail_template\global_alb_approve_notify.tpl
-					language-555\english\mail_template\global_alb_delete_notify.tpl
-					language-555\english\mail_template\global_alb_modify_notify.tpl
-					language-555\english\mail_template\global_alb_new_notify.tpl
-					language-555\english\mail_template\global_img_approve_notify.tpl
-					language-555\english\mail_template\global_img_comment_notify.tpl
-					language-555\english\mail_template\global_img_delete_notify.tpl
-					language-555\english\mail_template\global_img_new_notify.tpl
-					language-555\english\mail_template\index.php
-					language-555\english\mail_template\lostpass1.tpl
-					language-555\english\mail_template\lostpass2.tpl
-					language-555\english\mail_template\register.tpl
-					language-555\english\mail_template\tellfriend.tpl
-					language-555\english\mail_template\welcome.tpl
-				language-555\english\admin.php
-				language-555\english\auth.php
-				language-555\english\backend.php
-				language-555\english\banners.php
-				language-555\english\blocks.php
-				language-555\english\calendar.php
-				language-555\english\captcha.php
-				language-555\english\comment.php
-				language-555\english\common.php
-				language-555\english\countries.php
-				language-555\english\directorychecker.php
-				language-555\english\errors.php
-				language-555\english\feedback.php
-				language-555\english\filechecker.php
-				language-555\english\findusers.php
-				language-555\english\formdhtmltextarea.php
-				language-555\english\global.php
-				language-555\english\index.php
-				language-555\english\locale.php
-				language-555\english\logger.php
-				language-555\english\mail.php
-				language-555\english\main.php
-				language-555\english\misc.php
-				language-555\english\modinfo.php
-				language-555\english\notification.php
-				language-555\english\pmsg.php
-				language-555\english\search.php
-				language-555\english\stopwords.php
-				language-555\english\style.css
-				language-555\english\timezone.php
-				language-555\english\uploader.php
-				language-555\english\user.php
-				language-555\english\xmf.php
-				language-555\english\xoopsmailerlocal.php
-			-french
-				-help
-					language-555\french\help\help.html
-					language-555\french\help\help.html.txt
-					language-555\french\help\index.php
-				-mail_template
-					language-555\french\mail_template\activated.tpl
-					language-555\french\mail_template\adminactivate.tpl
-					language-555\french\mail_template\comment_notify.tpl
-					language-555\french\mail_template\commentsubmit_notify.tpl
-					language-555\french\mail_template\default_notify.tpl
-					language-555\french\mail_template\global_alb_approve_notify.tpl
-					language-555\french\mail_template\global_alb_delete_notify.tpl
-					language-555\french\mail_template\global_alb_modify_notify.tpl
-					language-555\french\mail_template\global_alb_new_notify.tpl
-					language-555\french\mail_template\global_img_approve_notify.tpl
-					language-555\french\mail_template\global_img_comment_notify.tpl
-					language-555\french\mail_template\global_img_delete_notify.tpl
-					language-555\french\mail_template\global_img_new_notify.tpl
-					language-555\french\mail_template\index.php
-					language-555\french\mail_template\lostpass1.tpl
-					language-555\french\mail_template\lostpass2.tpl
-					language-555\french\mail_template\register.tpl
-					language-555\french\mail_template\tellfriend.tpl
-					language-555\french\mail_template\welcome.tpl
-				language-555\french\admin.php
-				language-555\french\auth.php
-				language-555\french\backend.php
-				language-555\french\banners.php
-				language-555\french\blocks.php
-				language-555\french\calendar.php
-				language-555\french\captcha.php
-				language-555\french\comment.php
-				language-555\french\common.php
-				language-555\french\countries.php
-				language-555\french\directorychecker.php
-				language-555\french\errors.php
-				language-555\french\feedback.php
-				language-555\french\filechecker.php
-				language-555\french\findusers.php
-				language-555\french\formdhtmltextarea.php
-				language-555\french\global.php
-				language-555\french\index.php
-				language-555\french\locale.php
-				language-555\french\logger.php
-				language-555\french\mail.php
-				language-555\french\main.php
-				language-555\french\misc.php
-				language-555\french\modinfo.php
-				language-555\french\notification.php
-				language-555\french\pmsg.php
-				language-555\french\search.php
-				language-555\french\stopwords.php
-				language-555\french\style.css
-				language-555\french\timezone.php
-				language-555\french\uploader.php
-				language-555\french\user.php
-				language-555\french\xmf.php
-				language-555\french\xoopsmailerlocal.php
-			-french-zzz
-				-help
-					language-555\french-zzz\help\help.html
-					language-555\french-zzz\help\help.html.txt
-					language-555\french-zzz\help\index.php
-				-mail_template
-					language-555\french-zzz\mail_template\global_alb_approve_notify.tpl
-					language-555\french-zzz\mail_template\global_alb_delete_notify.tpl
-					language-555\french-zzz\mail_template\global_alb_modify_notify.tpl
-					language-555\french-zzz\mail_template\global_alb_new_notify.tpl
-					language-555\french-zzz\mail_template\global_img_approve_notify.tpl
-					language-555\french-zzz\mail_template\global_img_comment_notify.tpl
-					language-555\french-zzz\mail_template\global_img_delete_notify.tpl
-					language-555\french-zzz\mail_template\global_img_new_notify.tpl
-					language-555\french-zzz\mail_template\index.php
-				language-555\french-zzz\admin.php
-				language-555\french-zzz\blocks.php
-				language-555\french-zzz\common.php
-				language-555\french-zzz\directorychecker.php
-				language-555\french-zzz\feedback.php
-				language-555\french-zzz\filechecker.php
-				language-555\french-zzz\index.php
-				language-555\french-zzz\main.php
-				language-555\french-zzz\modinfo.php
-			-german
-				-help
-					language-555\german\help\help.html
-					language-555\german\help\index.php
-				-mail_template
-					language-555\german\mail_template\global_alb_approve_notify.tpl
-					language-555\german\mail_template\global_alb_delete_notify.tpl
-					language-555\german\mail_template\global_alb_modify_notify.tpl
-					language-555\german\mail_template\global_alb_new_notify.tpl
-					language-555\german\mail_template\global_img_approve_notify.tpl
-					language-555\german\mail_template\global_img_comment_notify.tpl
-					language-555\german\mail_template\global_img_delete_notify.tpl
-					language-555\german\mail_template\global_img_new_notify.tpl
-					language-555\german\mail_template\index.php
-				language-555\german\admin.php
-				language-555\german\blocks.php
-				language-555\german\common.php
-				language-555\german\directorychecker.php
-				language-555\german\feedback.php
-				language-555\german\filechecker.php
-				language-555\german\index.php
-				language-555\german\main.php
-				language-555\german\modinfo.php
-			language-555\index.php
 		-plugins
 			plugins\extgallery.php
 			plugins\index.php
@@ -1434,30 +1064,26 @@ _wggallery
 		upload_single.php
 		xoops_version.php
 [Open project files]
-0=upload_single.php
-1=plugins\tdmpicture.php
-2=class\ImagesHandler.php
-3=class\Images.php
-4=class\Common\FineimpuploadHandler.php
-5=admin\albums.php
+0=language\french\admin.php
+1=admin\images.php
+2=class\Albums.php
+3=admin\albums.php
+4=xoops_version.php
 [Selected Project Files]
 Main=
-Selected=class\Common\FineimpuploadHandler.php
-[upload_single.php]
-TopLine=61
-Caret=95,74
-[plugins\tdmpicture.php]
-TopLine=160
-Caret=46,199
-[class\ImagesHandler.php]
-TopLine=333
-Caret=42,345
-[class\Images.php]
-TopLine=283
-Caret=46,302
-[class\Common\FineimpuploadHandler.php]
-TopLine=118
-Caret=1,142
+Selected=class\Albums.php
+[language\french\admin.php]
+TopLine=343
+Caret=1,385
+[admin\images.php]
+TopLine=59
+Caret=75,84
+[class\Albums.php]
+TopLine=380
+Caret=1,414
 [admin\albums.php]
-TopLine=272
-Caret=23,291
+TopLine=64
+Caret=40,87
+[xoops_version.php]
+TopLine=144
+Caret=38,163

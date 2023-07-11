@@ -51,7 +51,7 @@ switch ($op) {
         }
         $GLOBALS['xoopsTpl']->assign('navigation', $adminObject->displayNavigation('images.php'));
         if ('list' === $op) {
-            $form = $albumsObj->getFormUploadToAlbum('images.php');
+            $form = $albumsObj->getFormUploadToAlbum('images.php', $sel_img_state);
             $GLOBALS['xoopsTpl']->assign('form', $form->render());
             $crImages = new \CriteriaCompo();
             $crImages->add(new \Criteria('img_state', Constants::STATE_APPROVAL_VAL));
@@ -80,6 +80,10 @@ switch ($op) {
                 $crImages->setSort('img_weight ASC,img_title ASC,img_albid');
                 $crImages->setOrder('ASC');
             }
+            if ($sel_img_state >= 0) { 
+                $crImages->add(new \Criteria('img_state', $sel_img_state));
+            }
+            
             $imagesCount = $imagesHandler->getCount($crImages);
             $crImages->setStart($start);
             $crImages->setLimit($limit);
