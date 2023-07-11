@@ -292,4 +292,8 @@ $moduleDirNameUpper = \mb_strtoupper($moduleDirName);
 //Latest Version Check
 \define('CO_' . $moduleDirNameUpper . '_' . 'NEW_VERSION', 'New Version: ');
 \define('CO_' . $moduleDirNameUpper . '_' . 'ERROR_BAD_XOOPS', 'You need minimum version %s (your current version is %s)');
-\define('CO_' . $moduleDirNameUpper . '_' . 'ERROR_BAD_PHP', 'You need minimum version %s (your current version is %s)');
+\define('CO_' . $moduleDirNameUpper . '_' . 'ERROR_BAD_PHP', 'You need minimum version %s (your current version is %s)');      
+
+\define('_CO_WGGALLERY_FORM_CLEAR_ALBUM_OK', 'Successfully empty images');
+\define('_CO_WGGALLERY_FORM_SURE_CLEAR_ALBUM', "Are you sure to empty the <b><span style='color : Red;'>%s </span></b> images of album : <b><span style='color : Red;'>%s </span></b>"); //default xoops confirm
+              

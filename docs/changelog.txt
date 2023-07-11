@@ -1,3 +1,38 @@
+<h5>1.2.1 RC1</h5>  [2023/07/08]  (JJDai jjdelalandre@orange.fr)
+Toutes les options ci-dessous ont été ajoutées dans le but de faciliter la gestion de centaines d'albums regroupés dans des dizaines de collections
+
+Admin : onglet albums
+- Ajout d'une liste de sélection des albums :  tout / collections uniquement / album d'une collection 
+- Ajout d'une sélection par bouton radio de l'état :  tout / hors ligne / en ligne 
+- Ajout dans les action d'un bouton "Vider l'album" qui permet de supprimer toutes les images sans être obligé de supprimer et recreer l'album
+- Ajout d'un bouton d'accès à la gestion des albums de la collection parente
+- Ajout d'un bouton d'accès à l'ajout d'images multiple de l'album
+- Déplacement dans les actions du bouton "etat" dans la colonne "etat" à la place de l'existant qui faisait double emploi
+- Ajout dans les actions d'un bouton de clonage d'un album, il ne clone pas les images de l'album
+- Ajout dans les actions d'un bouton qui permet d'appliquer les permissions d'une collection aux albums de cette collection
+- ajout d'un bouton 'view" qui ouvre l'album coté utilisateur  dans un nouvel onglet
+- Ajout dans les actions d'une icone transparent pour remplacer une action si elle n'est pas possible, permet d'alligner tous les icones verticalement
+- remplacement de la valeur boolean dans la colonne "is Collection" par un bouton d'accès à la collection et regroupement des deux colonnes "is collection" et "nb sub-albums"
+- cadrage à gauche dans les liste du nom et du texte court
+- ajout dans le titre du tableau "weight" d'un bouton pour recalculer le poids selon le nom et l'id
+- Ajout d'un bouton dans le titre de la colonne "collection parente" qui renvoie sur la collection parente de celle en cours
+- Ajout des constantes de langue nécessaires
+- Simplification du passage de variables  $start, $limit, $sel_coll_id, $sel_alb_state dans le template-list des albums, 
+  remplacées par la variable : $context = "&start={$start}&limit={$limit}&sel_coll_id={$sel_coll_id}&sel_alb_state={$sel_alb_state}";
+- Déplacement des actions sur les images d'un album ans la colonne "images"   (ajout, suppressoin, import multiples,)
+- Correction de l'url des icones
+
+Formulaire d'édition d'un album: 
+- ajout du tri "alb_iscoll DESC, alb_name ASC, alb_date" dans la liste de sélection de l'album parent
+
+Admin : onglet images
+- Regroupement de tous les titres et noms d'images dans la même clonne
+- Déplacement et fusion du bouton de changement d'état dans la colonne "état"
+- Ajout de la gestion du poids dans la liste
+- Ajout d'un bouton dand le titre de la colonne poids, permet de racalculer le poids en fonction d'un tri alphabetique
+- suppression de la colonne "ip", pas très utiles
+- Correction de l'url des icones
+                    
 <h5>1.2.1 RC1</h5>  [2023/03/09]
 <hr>
  - fixed missing default value smarty (goffy)

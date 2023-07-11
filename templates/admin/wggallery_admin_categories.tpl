@@ -59,9 +59,9 @@
                             <td class='center'><{$category.submitter}></td>
                             <td class='center  width10'>
                                 <a href='<{$wggallery_url}>/admin/categories.php?op=edit&amp;cat_id=<{$category.id}>' title='<{$smarty.const._EDIT}>'>
-                                    <img src='<{xoModuleIcons16 'edit.png'}>' alt='categories'></a>
+                                    <img src='<{xoModuleIcons16 edit.png}>' alt='categories'></a>
                                 <a href='<{$wggallery_url}>/admin/categories.php?op=delete&amp;cat_id=<{$category.id}>' title='<{$smarty.const._DELETE}>'>
-                                    <img src='<{xoModuleIcons16 'delete.png'}>' alt='categories'></a>
+                                    <img src='<{xoModuleIcons16 delete.png}>' alt='categories'></a>
                             </td>
                         </tr>
                     <{/foreach}>

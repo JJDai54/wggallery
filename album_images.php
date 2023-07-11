@@ -230,6 +230,7 @@ switch ($op) {
         $albumsObj->setVar('alb_imgtype', Constants::ALBUM_IMGCAT_USE_UPLOADED_VAL);
         require_once \XOOPS_ROOT_PATH . '/class/uploader.php';
         $fileName       = $_FILES['attachedfile']['name'];
+//        echo "<br>fileName : {$fileName}<hr>";   // JDai - upload
         $imageMimetype  = $_FILES['attachedfile']['type'];
         $uploaderErrors = '';
         $maxwidth       = $helper->getConfig('maxwidth');

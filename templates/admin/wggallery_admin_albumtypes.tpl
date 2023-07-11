@@ -40,7 +40,7 @@
 							<a href="albumtypes.php?op=reset&amp;at_id=<{$albumtype.id}>&amp;template=<{$albumtype.template}>" title="<{$smarty.const._RESET}>">
 								<img src="<{$wggallery_icon_url_16}>reset.png" alt="<{$smarty.const._RESET}>"></a>
 							<a href="albumtypes.php?op=delete&amp;at_id=<{$albumtype.id}>" title="<{$smarty.const._DELETE}>">
-								<img src="<{xoModuleIcons16 'delete.png'}>" alt="albumtypes"></a>
+								<img src="<{xoModuleIcons16}>/delete.png" alt="albumtypes"></a>
 						</td>
 					</tr>
 				<{/foreach}>

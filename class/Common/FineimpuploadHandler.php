@@ -137,12 +137,16 @@ class FineimpuploadHandler extends \SystemFineUploadHandler
         $this->imagePath      = $this->pathUpload . '/large/' . $this->imageNameLarge;
         $this->imageMimetype  = $_FILES[$this->inputName]['type'];
         $this->imageSize      = $_FILES[$this->inputName]['size'];
-
+        
+        // JJDai : affectation du nom de fichier d'origine sans l'extension
+        $h = strrpos($_FILES[$this->inputName]['name'], '.');
+        $title = substr($_FILES[$this->inputName]['name'], 0, $h);
+        
         if (!move_uploaded_file($_FILES[$this->inputName]['tmp_name'], $this->imagePath)) {
             return false;
         }
 
-        $ret = $imagesHandler->handleSingleUpload($this->imageNameLarge, $this->imageNameLarge, '', $this->imageMimetype, $this->imageSize, $this->claims->cat);
+        $ret = $imagesHandler->handleSingleUpload($this->imageNameLarge, $title, '', $this->imageMimetype, $this->imageSize, $this->claims->cat);
         $uuid = '';// \bin2hex(random_bytes(16));
         if ($ret) {
             return ['success' => true, 'uuid' => $uuid];

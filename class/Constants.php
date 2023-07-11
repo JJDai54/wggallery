@@ -33,6 +33,7 @@ class Constants
 
     // common constants
     // constants for state
+    const STATE_ALL_VAL = -1;
     const STATE_OFFLINE_VAL = 0;
     const STATE_ONLINE_VAL = 1;
     const STATE_APPROVAL_VAL = 2;

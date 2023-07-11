@@ -85,6 +85,7 @@ $modversion['templates'] = [
     ['file' => 'wggallery_admin_header.tpl', 'description' => '', 'type' => 'admin'],
     ['file' => 'wggallery_admin_index.tpl', 'description' => '', 'type' => 'admin'],
     ['file' => 'wggallery_admin_albums.tpl', 'description' => '', 'type' => 'admin'],
+    ['file' => 'wggallery_admin_albums_old.tpl', 'description' => '', 'type' => 'admin'],  //JJDai : template d'origine
     ['file' => 'wggallery_admin_images.tpl', 'description' => '', 'type' => 'admin'],
     ['file' => 'wggallery_admin_gallerytypes.tpl', 'description' => '', 'type' => 'admin'],
     ['file' => 'wggallery_admin_albumtypes.tpl', 'description' => '', 'type' => 'admin'],

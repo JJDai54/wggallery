@@ -289,4 +289,96 @@ class AlbumsHandler extends \XoopsPersistableObjectHandler
 
         return $childsAll;
     }
+
+/* ******************************
+ * Update weight
+ * *********************** */
+ function updateWeight($albId, $action, $step = 10){
+ global $xoopsDB;
+ $table = $this->table;
+ $fldWeight = 'alb_weight';
+ $fldCollId = 'alb_pid';
+ $fldId = 'alb_id';    
+ 
+    //recherche de la collection parent
+    $albumObj = $this->get($albId);
+    $albCollId = $albumObj->getVar($fldCollId);
+//echo "poids {$albId}/{$albCollId} = " . $albumObj->getVar($fldWeight) . "<br>";
+    
+    $clauseWhere = "WHERE {$fldCollId}={$albCollId}";     
+    $clauseOrder = "ORDER BY {$fldWeight},{$fldId}";
+ 
+ 
+         switch ($action){
+            case 'up'; 
+              $newValue = "{$fldWeight} = {$fldWeight}-{$step}-1";
+              break;
+
+            case 'down'; 
+              $newValue = "{$fldWeight} = {$fldWeight}+{$step}+1";
+            break;
+
+            case 'first'; 
+              $newValue = "{$fldWeight} = -99999";
+            break;
+
+            case 'last'; 
+              $newValue = "{$fldWeight} = 99999";
+              
+            default; 
+              $newValue = "{$fldWeight} = 88888";
+            break;
+            
+         }
+    //defini le poids du premier element
+    $firstWeight = $step;
+    $sql = "SET @rank={$firstWeight};";
+    $result = $xoopsDB->queryf($sql);
+    
+    //recalcul le poids pour la collection
+    $sql = "UPDATE {$table} SET {$fldWeight} = (@rank:=@rank+{$step}) {$clauseWhere} {$clauseOrder};";    
+    $result = $xoopsDB->queryf($sql);
+    //----------------------------------------------------------
+    //affectation de la nouvelle à l'album selectionné
+   // $albumObj->setVar($fldWeight, );
+    //$this->insert($albumObj);
+     $sql = "UPDATE {$table} SET {$newValue} WHERE alb_id={$albId}"; 
+     $xoopsDB->queryf($sql);
+//echo "poids {$albId}/{$albCollId} = " . $albumObj->getVar($fldWeight) . "<br>";
+    //----------------------------------------------------------
+    //recalcul du poids par pas de 10 (par default)
+    //$firstWeight = $step;
+    $sql = "SET @rank={$firstWeight};";
+    $result = $xoopsDB->queryf($sql);
+
+    $sql = "UPDATE {$table} SET {$fldWeight} = (@rank:=@rank+{$step}) {$clauseWhere} {$clauseOrder};";    
+    $result = $xoopsDB->queryf($sql);
+ }
+ 
+/* ******************************
+ * Recilcule le pids des albums d'une collection selon les champs passé en paramètre
+ * *********************** */
+ function updatetWeightByFields($albCollId, $sort="alb_name,alb_id", $step = 10){
+ global $xoopsDB;
+ $table = $this->table;
+ $fldWeight = 'alb_weight';
+ $fldCollId = 'alb_pid';
+ $fldId = 'alb_id';    
+ 
+    
+    $clauseWhere = "WHERE {$fldCollId}={$albCollId}";     
+    $clauseOrder = "ORDER BY {$sort}";
+ 
+    //defini le poids du premier element
+    $firstWeight = $step;
+    $sql = "SET @rank={$firstWeight};";
+    $result = $xoopsDB->queryf($sql);
+    
+    //recalcul le poids pour la collection
+    $sql = "UPDATE {$table} SET {$fldWeight} = (@rank:=@rank+{$step}) {$clauseWhere} {$clauseOrder};";    
+    $result = $xoopsDB->queryf($sql);
+    //----------------------------------------------------------
+ 
+ }
+    
 }

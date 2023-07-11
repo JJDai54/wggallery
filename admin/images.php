@@ -33,6 +33,9 @@ $albId = Request::getInt('alb_id');
 $start = Request::getInt('start');
 $limit = Request::getInt('limit', $helper->getConfig('adminpager'));
 
+$sel_img_state = Request::getInt('sel_img_state', Constants::STATE_ALL_VAL, \_CO_WGGALLERY_ALL);
+$context = "&start={$start}&limit={$limit}&alb_id={$albId}&sel_img_state={$sel_img_state}";
+
 $templateMain = 'wggallery_admin_images.tpl';
 $GLOBALS['xoopsTpl']->assign('wggallery_icon_url_16', \WGGALLERY_ICONS_URL . '16/');
 
@@ -74,7 +77,7 @@ switch ($op) {
             }
             if ('approve' === $op) {
                 $crImages->add(new \Criteria('img_state', Constants::STATE_APPROVAL_VAL));
-                $crImages->setSort('img_albid');
+                $crImages->setSort('img_weight ASC,img_title ASC,img_albid');
                 $crImages->setOrder('ASC');
             }
             $imagesCount = $imagesHandler->getCount($crImages);
@@ -84,6 +87,8 @@ switch ($op) {
             $GLOBALS['xoopsTpl']->assign('images_count', $imagesCount);
             $GLOBALS['xoopsTpl']->assign('wggallery_url', \WGGALLERY_URL);
             $GLOBALS['xoopsTpl']->assign('wggallery_upload_url', \WGGALLERY_UPLOAD_URL);
+            $GLOBALS['xoopsTpl']->assign('context', $context);
+            
             // Table view images
             if ($imagesCount > 0) {
                 foreach (\array_keys($imagesAll) as $i) {
@@ -225,5 +230,20 @@ switch ($op) {
         }
 
         break;
+
+    case 'update_weight':
+        $action = Request::getCmd('action');
+        $imgId = Request::getInt('imgId', 0);
+        //$albPid = Request::getInt('albPid', 0);
+        $imagesHandler->updateWeight($imgId, $action);
+        //exit ("<hr>context : <br>{$context}<hr>");
+        \redirect_header('images.php?op=list&sort=img_weight&orderby=ASC' . $context, 2, \_AM_WGGALLERY_WEIGHT_UPDATE);        
+        break;
+        
+    case 'update_weight_by_fields':
+        $imagesHandler->updatetWeightByFields($albId);
+        \redirect_header('images.php?op=list&sort=alb_weight&orderby=ASC' . $context, 2, \_AM_WGGALLERY_WEIGHT_UPDATE);        
+        break;
+        
 }
 require __DIR__ . '/footer.php';

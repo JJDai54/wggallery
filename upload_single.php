@@ -71,7 +71,7 @@ switch ($op) {
         $filename       = $_FILES['img_name']['name'];
         $imgMimetype    = $_FILES['img_name']['type'];
         $imgSize        = $_FILES['img_name']['size'];
-        $imgTitle       = \preg_replace("/[^a-zA-Z0-9]+/", '', Request::getString('img_title'));
+        $imgTitle       = \preg_replace("/[^a-zA-Z0-9]+/", '', Request::getString('img_title')."-JJDai-321");
         $uploaderErrors = '';
         $savedFilename  = '';
         $uploader = new \XoopsMediaUploader(\WGGALLERY_UPLOAD_IMAGE_PATH . '/large/',

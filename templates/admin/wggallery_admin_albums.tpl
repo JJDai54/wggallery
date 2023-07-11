@@ -1,39 +1,58 @@
 <!-- Header -->
 <{include file='db:wggallery_admin_header.tpl'}>
 
+<{if empty($form)}>
+    <form name='form_select_collection' id='formselalbum' op='albums.php?op=list'>
+        <{$smarty.const._CO_WGGALLERY_COLLECTION}> : <{$select_collection}> 
+        <{$smarty.const._CO_WGGALLERY_ALBUM_STATE}> : <{$select_state}>  &nbsp;&nbsp;&nbsp;
+        <{* <{$smarty.const._CO_WGGALLERY_CATS_SELECT}> : <{$select_category}> *}>
+<{/if}>
 <{if $albums_list|default:''}>
+<{assign var="fldImg" value="blue"}>
+    
 	<table class='table table-bordered'>
 		<thead>
 			<tr class='head'>
 				<th class='center'>
                     <{$smarty.const._CO_WGGALLERY_ALBUM_ID}>
-                    <a href='albums.php?op=list&amp;sort=alb_id&amp;orderby=DESC&amp;start=<{$start}>&amp;limit=<{$limit}>' title='<{$smarty.const._DESCENDING}>'>
+                    <a href='albums.php?op=list&amp;sort=alb_id&amp;orderby=DESC<{$context}>' title='<{$smarty.const._DESCENDING}>'>
                         <img src='<{$wggallery_icon_url_16}>desc.png' alt='<{$smarty.const._DESCENDING}>'></a>
-                    <a href='albums.php?op=list&amp;sort=alb_id&amp;orderby=ASC&amp;start=<{$start}>&amp;limit=<{$limit}>' title='<{$smarty.const._ASCENDING}>'>
+                    <a href='albums.php?op=list&amp;sort=alb_id&amp;orderby=ASC<{$context}>' title='<{$smarty.const._ASCENDING}>'>
                         <img src='<{$wggallery_icon_url_16}>asc.png' alt='<{$smarty.const._ASCENDING}>'></a>
                 </th>
-				<th class='center'><{$smarty.const._CO_WGGALLERY_ALBUM_PID}></th>
+				<th class='center'><{$smarty.const._CO_WGGALLERY_ALBUM_PID}>
+                    <a href='albums.php?op=goto_parent&sel_coll_id=<{$sel_coll_id}>' title='<{$smarty.const._AM_WGGALLERY_ALBUM_PARENT}>'>
+                    
+                    
+                        <img src="<{$wggallery_icon_url_16}>/upload.png" title="<{$smarty.const._AM_WGGALLERY_ALBUM_PARENT}>">                            
+                    
+                    
+                    </a>                
+                </th>
 				<th class='center'><{$smarty.const._CO_WGGALLERY_ALBUM_ISCOLL}></th>
 				<th class='center'>
                     <{$smarty.const._CO_WGGALLERY_ALBUM_NAME}>
-                    <a href='albums.php?op=list&amp;sort=alb_name&amp;orderby=DESC&amp;start=<{$start}>&amp;limit=<{$limit}>' title='<{$smarty.const._DESCENDING}>'>
+                    <a href='albums.php?op=list&amp;sort=alb_name&amp;orderby=DESC<{$context}>' title='<{$smarty.const._DESCENDING}>'>
                         <img src='<{$wggallery_icon_url_16}>desc.png' alt='<{$smarty.const._DESCENDING}>'></a>
-                    <a href='albums.php?op=list&amp;sort=alb_name&amp;orderby=ASC&amp;start=<{$start}>&amp;limit=<{$limit}>' title='<{$smarty.const._ASCENDING}>'>
+                    <a href='albums.php?op=list&amp;sort=alb_name&amp;orderby=ASC<{$context}>' title='<{$smarty.const._ASCENDING}>'>
                         <img src='<{$wggallery_icon_url_16}>asc.png' alt='<{$smarty.const._ASCENDING}>'></a>
                 </th>
 				<th class='center'><{$smarty.const._CO_WGGALLERY_ALBUM_DESC}></th>
 				<th class='center'>
                     <{$smarty.const._CO_WGGALLERY_WEIGHT}>
-                    <a href='albums.php?op=list&amp;sort=alb_weight&amp;orderby=DESC&amp;start=<{$start}>&amp;limit=<{$limit}>' title='<{$smarty.const._DESCENDING}>'>
+                    <a href='albums.php?op=list&amp;sort=alb_weight&amp;orderby=DESC<{$context}>' title='<{$smarty.const._DESCENDING}>'>
                         <img src='<{$wggallery_icon_url_16}>desc.png' alt='<{$smarty.const._DESCENDING}>'></a>
-                    <a href='albums.php?op=list&amp;sort=alb_weight&amp;orderby=ASC&amp;start=<{$start}>&amp;limit=<{$limit}>' title='<{$smarty.const._ASCENDING}>'>
+                    <a href='albums.php?op=list&amp;sort=alb_weight&amp;orderby=ASC<{$context}>' title='<{$smarty.const._ASCENDING}>'>
                         <img src='<{$wggallery_icon_url_16}>asc.png' alt='<{$smarty.const._ASCENDING}>'></a>
+                    
+                    <img src="<{$wggallery_icon_url_16}>/arrows/blank-16.png" title="">                    
+                    <a href='albums.php?op=update_weight_by_fields&sort=alb_weight&orderby=ASC<{$context}>' title='<{$smarty.const._AM_WGGALLERY_ALPHA}>'>
+                        <img src='<{$wggallery_icon_url_16}>alpha_asc.png' alt='<{$smarty.const._AM_WGGALLERY_ALPHA}>'></a>
                 </th>
 				<th class='center'><{$smarty.const._CO_WGGALLERY_ALBUM_IMAGE}></th>
 				<th class='center'><{$smarty.const._CO_WGGALLERY_ALBUM_STATE}></th>
                 <th class='center'><{$smarty.const._CO_WGGALLERY_WATERMARKS}></th>
                 <th class='center'><{$smarty.const._CO_WGGALLERY_ALBUM_NB_IMAGES}></th>
-                <th class='center'><{$smarty.const._CO_WGGALLERY_ALBUM_NB_COLL}></th>
                 <{if $use_categories|default:''}><th class='center'><{$smarty.const._CO_WGGALLERY_CATS}></th><{/if}>
                 <{if $use_tags|default:''}><th class='center'><{$smarty.const._CO_WGGALLERY_TAGS}></th><{/if}>
 				<th class='center'><{$smarty.const._CO_WGGALLERY_DATE}></th>
@@ -43,14 +62,72 @@
 		</thead>
 		<{if $albums_count|default:''}>
 			<tbody>
-				<{foreach item=album from=$albums_list}>
+				<{foreach item=album from=$albums_list name=collAlbum}>
 					<tr class="<{cycle values='odd, even'}>">
 						<td class='center'><{$album.id}></td>
-						<td class='center'><{$album.pid}></td>
-						<td class='center'><{$album.iscoll}></td>
-						<td class='center'><{$album.name}></td>
-						<td class='center'><{$album.desc}></td>
-						<td class='center'><{$album.weight}></td>
+						<td class='center'>
+                            <a href='albums.php?op=list&sel_coll_id=<{$album.pid}>' title='<{$smarty.const._EDIT}>'>
+                            [#<{$album.pid}>]
+                            
+                            </a></td>
+						<td class='center'>
+                            <{if $album.iscoll}>
+                                <a href="albums.php?op=list&sel_coll_id=<{$album.id}>&sel_alb_state=-1">
+                                <img src="<{$wggallery_icon_url_16}>/views.png" title="<{$smarty.const._AM_WGGALLERY_VIEW_ALBUM}>">
+                                (<{$album.nb_subalbums}> <{$smarty.const._AM_WGGALLERY_SUBALBUMS}>)
+                                </a>
+                            
+                            <{/if}>
+                        </td>
+                        <td class='left'>
+                            <a href='albums.php?op=edit&amp;alb_id=<{$album.id}><{$context}>' title='<{$smarty.const._EDIT}>'>
+                            <{$album.name}></a></td>
+						<td class='left'><{$album.desc}></td>
+						<{* <td class='center'><{$album.weight}> *}>
+                        
+                        
+                <{* ---------------- Arrows Weight -------------------- *}>
+                <td class="center width10" <{$styleParent}> >
+                <{if $sel_coll_id == 0}>
+                -
+                <{else}>
+
+                    <{if $smarty.foreach.collAlbum.first}>
+                      <img src="<{$wggallery_icon_url_16}>/arrows/<{$fldImg}>/first-0.png" title="<{$smarty.const._AM_WGGALLERY_FIRST}>">
+                      <img src="<{$wggallery_icon_url_16}>/arrows/<{$fldImg}>/up-0.png" title="<{$smarty.const._AM_WGGALLERY_UP}>">
+                    <{else}>
+                      <a href="albums.php?op=update_weight&albId=<{$album.id}>&albPid=<{$album.pid}>&action=first&weight=<{$album.weight}><{$context}>">
+                      <img src="<{$wggallery_icon_url_16}>/arrows/<{$fldImg}>/first-1.png" title="<{$smarty.const._AM_WGGALLERY_FIRST}>">
+                      </a>
+                    
+                      <a href="albums.php?op=update_weight&albId=<{$album.id}>&albPid=<{$album.pid}>&action=up&weight=<{$album.weight}><{$context}>">
+                      <img src="<{$wggallery_icon_url_16}>/arrows/<{$fldImg}>/up-1.png" title="<{$smarty.const._AM_WGGALLERY_UP}>">
+                      </a>
+                    <{/if}>
+                 
+                    <{* ----------------------------------- *}>
+                    <img src="<{$wggallery_icon_url_16}>/arrows/blank-08.png" title="">
+                    <{$album.weight}>
+                    <img src="<{$wggallery_icon_url_16}>/arrows/blank-08.png" title="">
+                    <{* ----------------------------------- *}>
+                 
+                    <{if $smarty.foreach.collAlbum.last}>
+                      <img src="<{$wggallery_icon_url_16}>/arrows/<{$fldImg}>/down-0.png" title="<{$smarty.const._AM_WGGALLERY_DOWN}>">
+                      <img src="<{$wggallery_icon_url_16}>/arrows/<{$fldImg}>/last-0.png" title="<{$smarty.const._AM_WGGALLERY_LAST}>">
+                    <{else}>
+                    
+                    <a href="albums.php?op=update_weight&albId=<{$album.id}>&albPid=<{$album.pid}>&action=down&weight=<{$album.weight}><{$context}>">
+                      <img src="<{$wggallery_icon_url_16}>/arrows/<{$fldImg}>/down-1.png" title="<{$smarty.const._AM_WGGALLERY_DOWN}>">
+                      </a>
+                 
+                    <a href="albums.php?op=update_weight&albId=<{$album.id}>&action=last&weight=<{$album.weight}><{$context}>">
+                      <img src="<{$wggallery_icon_url_16}>/arrows/<{$fldImg}>/last-1.png" title="<{$smarty.const._AM_WGGALLERY_LAST}>">
+                      </a>
+                    <{/if}>
+                <{/if}>                
+                </td>
+                <{* ---------------- /Arrows weight -------------------- *}>
+
 						<td class='center'>
 							<{if $album.image_err|default:''}>
 								<span style='color:#ff0000'><strong><{$album.image_errtext}></strong></span>
@@ -60,13 +137,18 @@
 						</td>
 						<td class='center'>
                             <{if $album.state|default:'' == 0}>
-                                <img class='state active' src='<{$wggallery_icon_url_16}>state0.png' alt='<{$smarty.const._CO_WGGALLERY_STATE_OFFLINE}>'>
+                                <a href='albums.php?op=change_state&amp;alb_state=1&amp;alb_id=<{$album.id}><{$context}>' title='<{$smarty.const._CO_WGGALLERY_STATE_OFFLINE}>'>
+                                    <img src='<{$wggallery_icon_url_16}>state0.png' alt='<{$smarty.const._CO_WGGALLERY_STATE_OFFLINE}>'></a>
                             <{/if}>
                             <{if $album.state|default:'' == 1}>
-                                <img class='state active' src='<{$wggallery_icon_url_16}>state1.png' alt='<{$smarty.const._CO_WGGALLERY_STATE_ONLINE}>'>
+                                <a href='albums.php?op=change_state&amp;alb_state=0&amp;alb_id=<{$album.id}><{$context}>' title='<{$smarty.const._CO_WGGALLERY_STATE_ONLINE}>'>
+                                    <img src='<{$wggallery_icon_url_16}>state1.png' alt='<{$smarty.const._CO_WGGALLERY_STATE_ONLINE}>'></a>
                             <{/if}>
                             <{if $album.state|default:'' == 2}>
-                                <img class='state active' src='<{$wggallery_icon_url_16}>state2.png' alt='<{$smarty.const._CO_WGGALLERY_STATE_APPROVAL}>'>
+                                <a href='albums.php?op=change_state&amp;alb_state=1&amp;alb_id=<{$album.id}><{$context}>' title='<{$smarty.const._CO_WGGALLERY_STATE_ONLINE}>'>
+                                    <img src='<{$wggallery_icon_url_16}>state1.png' alt='<{$smarty.const._CO_WGGALLERY_STATE_ONLINE}>'></a>
+                                <a href='albums.php?op=change_state&amp;alb_state=0&amp;alb_id=<{$album.id}><{$context}>' title='<{$smarty.const._CO_WGGALLERY_STATE_OFFLINE}>'>
+                                    <img src='<{$wggallery_icon_url_16}>state0.png' alt='<{$smarty.const._CO_WGGALLERY_STATE_OFFLINE}>'></a>
                             <{/if}>
                         </td>
                         <td class='center'>
@@ -74,35 +156,59 @@
 								<{$album.wmname|default:''}>
 							</a>
                         </td>
-                        <td class='center'><{if $album.iscoll|default:''}>-<{else}><{$album.nb_images}><{/if}></td>
-                        <td class='center'><{if $album.iscoll|default:''}><{$album.nb_subalbums}><{else}>-<{/if}></td>
+                        <td class='right'>
+                            <{if $album.iscoll|default:''}>-&nbsp;&nbsp;&nbsp;
+                            <{else}>
+                                <{$album.nb_images}>&nbsp;&nbsp;&nbsp;
+                                <{if $album.nb_images|default:0 > 0}>
+                                    <a href='images.php?op=list&amp;alb_id=<{$album.id}>' title='<{$smarty.const._CO_WGGALLERY_IMAGES}>'>
+                                        <img src='<{$wggallery_icon_url_16}>photos.png' alt='<{$smarty.const._CO_WGGALLERY_IMAGES}>'></a>
+                                    <{* JJDai : ajout de la suppression de toutes les images d'un albums *}>                                     
+                                    <a href='albums.php?op=clear_album&amp;alb_id=<{$album.id}><{$context}>' title='<{$smarty.const._CO_WGGALLERY_FORM_CLEAR_ALBUM}>'>
+                                        <img src='<{$wggallery_icon_url_16}>empty.png' alt='<{$smarty.const._CO_WGGALLERY_FORM_CLEAR_ALBUM}>'></a>
+                                <{else}>  <{* JJDai : Ajout d'icones transparent pour aligner les icones des albums verticalement *}>
+                                        <img src='<{$wggallery_icon_url_16}>blank.png' alt=''></a>
+                                        <img src='<{$wggallery_icon_url_16}>blank.png' alt=''></a>
+                                <{/if}>
+                                <{* JJDai : ajout de l'import multiple d'image *}>                                     
+                                <a href='<{$smarty.const.XOOPS_URL}>/modules/wggallery/upload.php?op=list&alb_id=<{$album.id}>' target='_blank' title='<{$smarty.const._AM_WGGALLERY_ADD_IMAGES}>'>
+                                    <img src='<{$wggallery_icon_url_16}>images.png' alt='<{$smarty.const._AM_WGGALLERY_ADD_IMAGES}>'></a>
+                            <{/if}>
+                            <img src='<{$wggallery_icon_url_16}>blank.png' alt=''></a>
+                        </td>
                         <{if $use_categories|default:''}><td class='center'><{$album.cats_list}></td><{/if}>
                         <{if $use_tags|default:''}><td class='center'><{$album.tags}></td><{/if}>
 						<td class='center'><{$album.date}></td>
 						<td class='center'><{$album.submitter}></td>
 						<td class='center  width10'>
-                            <{if $album.state|default:'' == 0}>
-                                <a href='albums.php?op=change_state&amp;alb_state=1&amp;alb_id=<{$album.id}>&amp;start=<{$start}>&amp;limit=<{$limit}>' title='<{$smarty.const._CO_WGGALLERY_STATE_OFFLINE}>'>
-                                    <img src='<{$wggallery_icon_url_16}>state0.png' alt='<{$smarty.const._CO_WGGALLERY_STATE_OFFLINE}>'></a>
+                       
+                            <a href='albums.php?op=edit&amp;alb_id=<{$album.id}><{$context}>' title='<{$smarty.const._EDIT}>'>
+								<img src='<{xoModuleIcons16}>edit.png' alt='<{$smarty.const._EDIT}>'></a>
+                            <{* JJDai : Ajout de la fonction clone album *}>
+                            <a href='albums.php?op=clone&amp;alb_id=<{$album.id}><{$context}>' title='<{$smarty.const._CLONE}>'>
+								<img src='<{xoModuleIcons16}>/editcopy.png' alt='<{$smarty.const._CLONE}>'></a>
+							<a href='albums.php?op=delete&amp;alb_id=<{$album.id}><{$context}>' title='<{$smarty.const._DELETE}>'>
+								<img src='<{xoModuleIcons16}>/delete.png' alt='<{$smarty.const._DELETE}>'></a>
+                          
+                              <img src='<{$wggallery_icon_url_16}>blank.png' alt=''></a>        <{* JJDai : ajout d'un espace pour aerer *}>
+                            <{* JJDai : Accès direct à l'album cote user dans un nouvel onglet *}>
+                            <{if $album.iscoll}>
+                                <a href='/modules/wggallery/index.php?op=list&alb_id=<{$album.id}>' target="_blank"  title='<{$smarty.const._CO_WGGALLERY_VIEW_ALBUM}>'>
+								<img src='<{$wggallery_icon_url_16}>/views.png' alt='<{$smarty.const._CO_WGGALLERY_VIEW_ALBUM}>'></a>
+                            <{else}>
+                                <a href='/modules/wggallery/gallery.php?op=show&alb_id=<{$album.id}>' target="_blank"  title='<{$smarty.const._CO_WGGALLERY_VIEW_ALBUM}>'>
+								<img src='<{$wggallery_icon_url_16}>/views.png' alt='<{$smarty.const._CO_WGGALLERY_VIEW_ALBUM}>'></a>
                             <{/if}>
-                            <{if $album.state|default:'' == 1}>
-                                <a href='albums.php?op=change_state&amp;alb_state=0&amp;alb_id=<{$album.id}>&amp;start=<{$start}>&amp;limit=<{$limit}>' title='<{$smarty.const._CO_WGGALLERY_STATE_ONLINE}>'>
-                                    <img src='<{$wggallery_icon_url_16}>state1.png' alt='<{$smarty.const._CO_WGGALLERY_STATE_ONLINE}>'></a>
-                            <{/if}>
-                            <{if $album.state|default:'' == 2}>
-                                <a href='albums.php?op=change_state&amp;alb_state=1&amp;alb_id=<{$album.id}>&amp;start=<{$start}>&amp;limit=<{$limit}>' title='<{$smarty.const._CO_WGGALLERY_STATE_ONLINE}>'>
-                                    <img src='<{$wggallery_icon_url_16}>state1.png' alt='<{$smarty.const._CO_WGGALLERY_STATE_ONLINE}>'></a>
-                                <a href='albums.php?op=change_state&amp;alb_state=0&amp;alb_id=<{$album.id}>&amp;start=<{$start}>&amp;limit=<{$limit}>' title='<{$smarty.const._CO_WGGALLERY_STATE_OFFLINE}>'>
-                                    <img src='<{$wggallery_icon_url_16}>state0.png' alt='<{$smarty.const._CO_WGGALLERY_STATE_OFFLINE}>'></a>
-                            <{/if}>
-                            <a href='albums.php?op=edit&amp;alb_id=<{$album.id}>&amp;start=<{$start}>&amp;limit=<{$limit}>' title='<{$smarty.const._EDIT}>'>
-								<img src='<{xoModuleIcons16 'edit.png'}>' alt='<{$smarty.const._EDIT}>'></a>
-							<a href='albums.php?op=delete&amp;alb_id=<{$album.id}>&amp;start=<{$start}>&amp;limit=<{$limit}>' title='<{$smarty.const._DELETE}>'>
-								<img src='<{xoModuleIcons16 'delete.png'}>' alt='<{$smarty.const._DELETE}>'></a>
-                            <{if $album.nb_images|default:0 > 0}>
-                                <a href='images.php?op=list&amp;alb_id=<{$album.id}>' title='<{$smarty.const._CO_WGGALLERY_IMAGES}>'>
-                                    <img src='<{$wggallery_icon_url_16}>photos.png' alt='<{$smarty.const._CO_WGGALLERY_IMAGES}>'></a>
-                            <{/if}>
+                            <{* JJDai : ajout de la gestion des albums, renvoi sur la collection parent *}>                                     
+                              <a href='<{$smarty.const.XOOPS_URL}>/modules/wggallery/albums.php?op=list&alb_pid=<{$album.pid}>' title='<{$smarty.const._CO_WGGALLERY_MANAGE_ALBUMS}>'>
+                                  <img src='<{$wggallery_icon_url_16}>tools.png' alt='<{$smarty.const._CO_WGGALLERY_MANAGE_ALBUMS}>'></a>
+                            <{* JJDai : application des permision d'une collection a ses albums *}>                                     
+                              <{if $album.iscoll|default:0 > 0 AND $album.nb_subalbums|default:0 > 0}>
+  							<a href='albums.php?op=set_coll_permissions&amp;alb_id=<{$album.id}><{$context}>' title='<{$smarty.const._AM_WGGALLERY_SET_COLL_PERMISSIONS}>'>
+  								<img src='<{$wggallery_icon_url_16}>/cadenas_red.png' alt='<{$smarty.const._AM_WGGALLERY_SET_COLL_PERMISSIONS}>'></a>
+                              <{else}>  <{* JJDai : Ajout de l'application des permissions d'une collection a tous ses albums *}>                            
+                                      <img src='<{$wggallery_icon_url_16}>blank.png' alt=''></a>
+                              <{/if}>
 						</td>
 					</tr>
 				<{/foreach}>
