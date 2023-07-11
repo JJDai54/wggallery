@@ -1079,8 +1079,8 @@ Caret=1,385
 TopLine=59
 Caret=75,84
 [class\Albums.php]
-TopLine=380
-Caret=1,414
+TopLine=366
+Caret=26,403
 [admin\albums.php]
 TopLine=64
 Caret=40,87

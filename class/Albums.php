@@ -400,7 +400,7 @@ class Albums extends \XoopsObject
         $form->addElement(new \XoopsFormHidden('start', $this->start));
         $form->addElement(new \XoopsFormHidden('limit', $this->limit));
 
-        if($sel_alb_state){
+        if($sel_img_state){
             // JJDai : selection de l'état
             $imgStateSelect = new \XoopsFormRadio(\_CO_WGGALLERY_ALBUM_STATE, 'sel_img_state', $sel_img_state);
             $imgStateSelect->setExtra('onchange="submit()"');
