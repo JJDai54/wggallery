@@ -13,6 +13,7 @@ DontOpen=0
 AbsolutePath=0
 FileFormat=0
 ProjectFilesOnly=0
+HTServer=localhost
 Extensions=*.*
 [Project tree]
 _wggallery
@@ -1071,7 +1072,7 @@ _wggallery
 4=xoops_version.php
 [Selected Project Files]
 Main=
-Selected=class\Albums.php
+Selected=xoops_version.php
 [language\french\admin.php]
 TopLine=343
 Caret=1,385
@@ -1079,11 +1080,11 @@ Caret=1,385
 TopLine=59
 Caret=75,84
 [class\Albums.php]
-TopLine=366
+TopLine=348
 Caret=24,385
 [admin\albums.php]
-TopLine=64
-Caret=40,87
+TopLine=44
+Caret=55,63
 [xoops_version.php]
-TopLine=144
-Caret=38,163
+TopLine=26
+Caret=123,38

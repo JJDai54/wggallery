@@ -35,7 +35,7 @@ $moduleDirNameUpper = \mb_strtoupper($moduleDirName);
 
 // ------------------- Informations ------------------- //
 $modversion = [
-    'version'             => '1.2.1',
+    'version'             => '1.2.1',   //forked by JJDai - jjdelalandre@orange.fr    https://github.com/JJDai54/wggallery
     'module_status'       => 'RC1',
     'release_date'        => '2023/04/13', // format: yyyy/mm/dd
     'name'                => \_MI_WGGALLERY_NAME,
